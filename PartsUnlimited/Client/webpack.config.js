@@ -10,19 +10,19 @@ module.exports = {
     mode: devMode ? "development" : "production",
     // Webpack needs to know where to start the bundling process,
     // so we define the Sass file under './Styles' directory
-    entry: ["./wwwroot/styles/style.scss"],
+    entry: ["./Styles/style.scss","./Scripts/site.js"],
     // This is where we define the path where Webpack will place
     // a bundled JS file. Webpack needs to produce this file,
     // but for our purposes you can ignore it
     output: {
-        path: path.resolve(__dirname, "wwwroot"),
+        path: path.resolve(__dirname, "wwwroot",),
         // Specify the base path for all the styles within your
         // application. This is relative to the output path, so in
         // our case it will be './wwwroot/css'
-        publicPath: "/css",
+        publicPath: "/wwwroot",
         // The name of the output bundle. Path is also relative
         // to the output path, so './wwwroot/js'
-        filename: "js/sass.js"
+        filename: "js/main.build.js"
     },
     module: {
         // Array of rules that tells Webpack how the modules (output)
@@ -79,32 +79,32 @@ module.exports = {
                     }
                 ]
             },
-            //{
-            //    // Adds support to load images in your CSS rules. It looks for
-            //    // .png, .jpg, .jpeg and .gif
-            //    test: /\.(png|jpe?g|gif)$/,
-            //    use: [
-            //        {
-            //            loader: "file-loader",
-            //            options: {
-            //                // The image will be named with the original name and
-            //                // extension
-            //                name: "[name].[ext]",
-            //                // Indicates where the images are stored and will use
-            //                // this path when generating the CSS files.
-            //                // Example, in site.scss I have
-            //                // url('../wwwroot/images/pattern.png') and when generating
-            //                // the CSS file, file-loader will output as
-            //                // url(../images/pattern.png), which is relative
-            //                // to '/css/site.css'
-            //                publicPath: "../images",
-            //                // When this option is 'true', the loader will emit the
-            //                // image to output.path
-            //                emitFile: false
-            //            }
-            //        }
-            //    ]
-            //}
+            {
+                // Adds support to load images in your CSS rules. It looks for
+                // .png, .jpg, .jpeg and .gif
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            // The image will be named with the original name and
+                            // extension
+                            name: "[name].[ext]",
+                            // Indicates where the images are stored and will use
+                            // this path when generating the CSS files.
+                            // Example, in site.scss I have
+                            // url('../wwwroot/images/pattern.png') and when generating
+                            // the CSS file, file-loader will output as
+                            // url(../images/pattern.png), which is relative
+                            // to '/css/site.css'
+                            publicPath: "../images",
+                            // When this option is 'true', the loader will emit the
+                            // image to output.path
+                            emitFile: false
+                        }
+                    }
+                ]
+            }
         ]
     },
     plugins: [
@@ -114,5 +114,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: devMode ? "css/site.css" : "css/site.min.css"
         })
-    ]
+    ],
+    optimization: {
+        minimize: true
+    }
 };
+

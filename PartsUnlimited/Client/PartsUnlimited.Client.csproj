@@ -13,7 +13,41 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\sass.js" />
+    <None Remove="Scripts\site.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Scripts\site.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="Styles\custom.scss" />
+    <Content Include="Styles\style.scss" />
+    <Content Include="Styles\uikit-components.scss" />
+    <Content Include="Styles\uikit-theme\mixins\accordion.scss" />
+    <Content Include="Styles\uikit-theme\mixins\article.scss" />
+    <Content Include="Styles\uikit-theme\mixins\background.scss" />
+    <Content Include="Styles\uikit-theme\mixins\base.scss" />
+    <Content Include="Styles\uikit-theme\mixins\breadcrumb.scss" />
+    <Content Include="Styles\uikit-theme\mixins\button.scss" />
+    <Content Include="Styles\uikit-theme\mixins\card.scss" />
+    <Content Include="Styles\uikit-theme\mixins\form.scss" />
+    <Content Include="Styles\uikit-theme\mixins\margin.scss" />
+    <Content Include="Styles\uikit-theme\mixins\notification.scss" />
+    <Content Include="Styles\uikit-theme\mixins\offcanvas.scss" />
+    <Content Include="Styles\uikit-theme\mixins\section.scss" />
+    <Content Include="Styles\uikit-theme\mixins\subnav.scss" />
+    <Content Include="Styles\uikit-theme\mixins\table.scss" />
+    <Content Include="Styles\uikit-theme\mixins\text.scss" />
+    <Content Include="Styles\uikit-theme\mixins\_import.scss" />
+    <Content Include="Styles\uikit-theme\variables.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\banner1.svg" />
+    <None Include="wwwroot\images\banner2.svg" />
+    <None Include="wwwroot\images\banner3.svg" />
+    <None Include="wwwroot\images\logo.svg" />
   </ItemGroup>
 
   <ItemGroup>
