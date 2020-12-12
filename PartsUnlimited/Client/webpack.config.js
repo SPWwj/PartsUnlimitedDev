@@ -97,10 +97,15 @@ module.exports = {
                             // the CSS file, file-loader will output as
                             // url(../images/pattern.png), which is relative
                             // to '/css/site.css'
-                            publicPath: "../images",
+                            path: path.resolve(__dirname, "wwwroot",),
+                            // Specify the base path for all the styles within your
+                            // application. This is relative to the output path, so in
+                            // our case it will be './wwwroot/css'
+                            publicPath: "/images/misc",
+                            outputPath: "/images/misc",
                             // When this option is 'true', the loader will emit the
                             // image to output.path
-                            emitFile: false
+                            emitFile: true
                         }
                     }
                 ]

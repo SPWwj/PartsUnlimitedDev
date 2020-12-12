@@ -7,9 +7,21 @@
 
   <ItemGroup>
     <Compile Remove="wwwroot\bootstrap\**" />
+    <Compile Remove="wwwroot\images\backgrounds\**" />
+    <Compile Remove="wwwroot\images\components\**" />
+    <Compile Remove="wwwroot\images\icons\**" />
     <Content Remove="wwwroot\bootstrap\**" />
+    <Content Remove="wwwroot\images\backgrounds\**" />
+    <Content Remove="wwwroot\images\components\**" />
+    <Content Remove="wwwroot\images\icons\**" />
     <EmbeddedResource Remove="wwwroot\bootstrap\**" />
+    <EmbeddedResource Remove="wwwroot\images\backgrounds\**" />
+    <EmbeddedResource Remove="wwwroot\images\components\**" />
+    <EmbeddedResource Remove="wwwroot\images\icons\**" />
     <None Remove="wwwroot\bootstrap\**" />
+    <None Remove="wwwroot\images\backgrounds\**" />
+    <None Remove="wwwroot\images\components\**" />
+    <None Remove="wwwroot\images\icons\**" />
   </ItemGroup>
 
   <ItemGroup>
