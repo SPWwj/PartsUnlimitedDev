@@ -1,4 +1,4 @@
-﻿@using CarouselObj = PartsUnlimited.Shared.Carousel;
+﻿@using PartsUnlimited.Shared;
 @inject HttpClient Http
 <section class="uk-position-relative uk-visible-toggle uk-light"
          uk-slideshow="min-height: 300; max-height: 600;">
@@ -33,10 +33,10 @@
 </section>
 
 @code {
-    private CarouselObj[] carouselItems;
+    private Carousel[] carouselItems;
     protected override async Task OnInitializedAsync()
     {
-        carouselItems = await Http.GetFromJsonAsync<CarouselObj[]>("carousel");
+        carouselItems = await Http.GetFromJsonAsync<Carousel[]>("carousel");
     }
 
 }

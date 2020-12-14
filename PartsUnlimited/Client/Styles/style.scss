@@ -1,5 +1,6 @@
 ﻿/*@import "../lib/uikit/src/scss/uikit.scss";
 */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700);
 
 // UIkit variables and custom variable overrides
 @import "uikit-theme/variables";
@@ -18,4 +19,4 @@
 @import "custom.scss";
 
 @import "loader.scss";
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700);
+@import "site.scss";

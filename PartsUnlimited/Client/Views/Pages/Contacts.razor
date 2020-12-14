@@ -16,8 +16,9 @@
                         <section class="uk-width-1-1 uk-width-expand@m">
                             <article class="uk-card uk-card-default uk-card-small uk-card-body uk-article tm-ignore-container">
                                 <div class="tm-wrapper">
-                                    <figure class="tm-ratio tm-ratio-16-9 js-map" data-latitude="59.9356728"
-                                            data-longitude="30.3258604" data-zoom="14"></figure>
+                                    <div class="tm-ratio tm-ratio-16-9">
+                                        <Map_ />
+                                    </div>
                                 </div>
                                 <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-margin-top" uk-grid>
                                     <section>
@@ -186,15 +187,3 @@
         </div>
     </section>
 </main>
-@code {
-    [Inject]
-    public IJSRuntime JSRuntime { get; set; }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JSRuntime.InvokeVoidAsync("initMap");
-        }
-    }
-}
