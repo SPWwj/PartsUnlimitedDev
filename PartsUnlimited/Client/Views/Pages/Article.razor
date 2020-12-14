@@ -115,17 +115,16 @@
                                         Curabitur vulputate eget nisl sed dignissim. Sed eget metus ut orci
                                         volutpat gravida.
                                     </p>
-                                    @*<blockquote class="twitter-tweet" data-lang="en">
-                                            <p lang="en" dir="ltr">
-                                                Mophie&apos;s latest battery pack is powerful
-                                                enough to charge your 15-inch MacBook Pro<a href="https://t.co/jN4RzcxOyG">https://t.co/jN4RzcxOyG</a><a href="https://t.co/5oJBKZRVBx">pic.twitter.com/5oJBKZRVBx</a>
-                                            </p>&mdash; The Verge (@verge)<a href="https://twitter.com/verge/status/948539601265872896?ref_src=twsrc%5Etfw">
-                                                January
-                                                3, 2018
-                                            </a>
-                                        </blockquote>
-                                        <script src="https://platform.twitter.com/widgets.js" charset="utf-8"
-                                                async></script>*@
+                                    <blockquote class="twitter-tweet" data-lang="en">
+                                        <p lang="en" dir="ltr">
+                                            Mophie&apos;s latest battery pack is powerful
+                                            enough to charge your 15-inch MacBook Pro<a href="https://t.co/jN4RzcxOyG">https://t.co/jN4RzcxOyG</a><a href="https://t.co/5oJBKZRVBx">pic.twitter.com/5oJBKZRVBx</a>
+                                        </p>&mdash; The Verge (@@verge)<a href="https://twitter.com/verge/status/948539601265872896?ref_src=twsrc%5Etfw">
+                                            January
+                                            3, 2018
+                                        </a>
+                                    </blockquote>
+
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sem
                                         urna, accumsan nec velit et, convallis tincidunt enim. Proin
@@ -334,5 +333,17 @@
     </section>
 </main>
 @code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
 
+    [Parameter]
+    public string RawHtml { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("twttr.widgets.load");
+        }
+    }
 }

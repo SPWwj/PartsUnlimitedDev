@@ -187,5 +187,14 @@
     </section>
 </main>
 @code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initMap");
+        }
+    }
 }

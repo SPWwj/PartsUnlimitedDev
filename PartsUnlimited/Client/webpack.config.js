@@ -22,7 +22,8 @@ module.exports = {
         publicPath: "/wwwroot",
         // The name of the output bundle. Path is also relative
         // to the output path, so './wwwroot/js'
-        filename: "js/main.build.js"
+        filename: "js/main.build.js",
+
     },
     module: {
         // Array of rules that tells Webpack how the modules (output)
