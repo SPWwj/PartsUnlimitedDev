@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace PartsUnlimited.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CarouselController : Controller
     {
         [HttpGet]
