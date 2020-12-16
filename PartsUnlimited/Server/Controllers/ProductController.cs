@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PartsUnlimited.Server.Data;
+using PartsUnlimited.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +12,11 @@ namespace PartsUnlimited.Server.Controllers
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        //[HttpGet]
-        //public IEnumerable<Product> Get()
-        //{
-        //    return null;
-        //}
+        PartsUnlimitedContext context = new PartsUnlimitedContext();
+        [HttpGet]
+        public IEnumerable<Product> Get()
+        {
+            return context.Products.ToList(); ;
+        }
     }
 }

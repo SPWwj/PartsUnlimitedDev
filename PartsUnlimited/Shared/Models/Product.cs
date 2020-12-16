@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace PartsUnlimited.Client.Models
+namespace PartsUnlimited.Shared.Models
 {
     public partial class Product
     {
         public Product()
         {
+            AttributeSections = new HashSet<AttributeSection>();
             ProductAttributes = new HashSet<ProductAttribute>();
         }
 
@@ -19,6 +20,7 @@ namespace PartsUnlimited.Client.Models
         public decimal? PromoPrice { get; set; }
         public string Image { get; set; }
 
+        public virtual ICollection<AttributeSection> AttributeSections { get; set; }
         public virtual ICollection<ProductAttribute> ProductAttributes { get; set; }
     }
 }

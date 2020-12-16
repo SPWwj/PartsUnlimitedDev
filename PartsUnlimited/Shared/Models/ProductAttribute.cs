@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace PartsUnlimited.Client.Models
+namespace PartsUnlimited.Shared.Models
 {
     public partial class ProductAttribute
     {

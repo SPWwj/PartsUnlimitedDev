@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using PartsUnlimited.Client.Models;
+using PartsUnlimited.Shared.Models;
 
 #nullable disable
 
@@ -49,17 +49,20 @@ namespace PartsUnlimited.Server.Data
                     .WithMany(p => p.AttributeSections)
                     .HasForeignKey(d => d.ProductAttributeId)
                     .HasConstraintName("FK_AttributeSection_ProductAttribute");
+
+                entity.HasOne(d => d.Product)
+                    .WithMany(p => p.AttributeSections)
+                    .HasForeignKey(d => d.ProductId)
+                    .HasConstraintName("FK_AttributeSection_Product");
             });
 
             modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("Product");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Category).HasMaxLength(50);
 
-                entity.Property(e => e.Name).HasMaxLength(50);
+                entity.Property(e => e.Name).HasMaxLength(255);
 
                 entity.Property(e => e.Price).HasColumnType("decimal(19, 4)");
 

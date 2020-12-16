@@ -36,7 +36,7 @@
     private Carousel[] carouselItems;
     protected override async Task OnInitializedAsync()
     {
-        carouselItems = await Http.GetFromJsonAsync<Carousel[]>("carousel");
+        carouselItems = await Http.GetFromJsonAsync<Carousel[]>("api/carousel");
     }
 
 }
