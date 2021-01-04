@@ -1,0 +1,23 @@
+﻿@using PartsUnlimited.Shared.Models;
+
+<section>
+    <div class="tm-wrapper">
+        <div class="uk-grid-collapse uk-child-width-1-3@s uk-child-width-1-4@m tm-products-grid"
+             uk-grid>
+            @if (Products == null)
+            {
+                <em>Loading...</em>
+            }
+            else
+            {
+                foreach (var item in Products)
+                {
+                    <ProductCard_ Product="item" />
+                }
+            }
+        </div>
+    </div>
+</section>
+@code {
+    [Parameter] public Product[] Products { get; set; }
+}

@@ -54,7 +54,7 @@
         </div>
         <div class="tm-product-card-shop">
             <div class="tm-product-card-prices">
-                <del class="uk-text-meta">$@(Product.PromoPrice !=null ? Product.Price : Product.PromoPrice)</del>
+                <del class="uk-text-meta">@(Product.PromoPrice !=null ? $"${Product.Price}" : $"{Product.PromoPrice}")</del>
                 <div class="tm-product-card-price">
                     @(Product.PromoPrice !=null ? Product.PromoPrice : Product.Price)
                 </div>

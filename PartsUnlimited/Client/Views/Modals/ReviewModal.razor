@@ -1,0 +1,41 @@
+﻿<div id="review" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+        <h2 class="uk-modal-title uk-text-center">Review</h2>
+        <form class="uk-form-stacked">
+            <div class="uk-grid-small uk-child-width-1-1" uk-grid>
+                <div>
+                    <label>
+                        <div class="uk-form-label uk-form-label-required">Name</div>
+                        <input class="uk-input" type="text" required />
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <div class="uk-form-label uk-form-label-required">Email</div>
+                        <input class="uk-input" type="email" required />
+                    </label>
+                </div>
+                <div>
+                    <div class="uk-form-label">Rating</div>
+                    <ul class="uk-iconnav tm-rating">
+                        <li><a uk-icon="star"></a></li>
+                        <li><a uk-icon="star"></a></li>
+                        <li><a uk-icon="star"></a></li>
+                        <li><a uk-icon="star"></a></li>
+                        <li><a uk-icon="star"></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <label>
+                        <div class="uk-form-label uk-form-label-required">Review</div>
+                        <textarea class="uk-textarea" rows="5" required></textarea>
+                    </label>
+                </div>
+                <div class="uk-text-center">
+                    <button class="uk-button uk-button-primary">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
