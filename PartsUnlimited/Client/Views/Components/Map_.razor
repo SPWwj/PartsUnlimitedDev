@@ -1,7 +1,10 @@
-﻿<figure class="js-map" data-latitude="59.9356728"
-        data-longitude="30.3258604" data-zoom="14"></figure>
+﻿<figure class="js-map" data-latitude="@Location.Lat"
+        data-longitude="@Location.Long" data-zoom="14"></figure>
 
 @code {
+    [Parameter] public Location Location { get; set; }
+
+
     [Inject]
     public IJSRuntime JSRuntime { get; set; }
 

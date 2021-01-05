@@ -23,7 +23,7 @@
                         <div class="uk-margin-remove" uk-drop="mode: click; pos: bottom-center;">
                             <div class="uk-card uk-card-default uk-card-small uk-box-shadow-xlarge uk-overflow-hidden uk-padding-small uk-padding-remove-horizontal uk-padding-remove-bottom">
                                 <div class="uk-card-media-top map-info ">
-                                    <Map_ />
+                                    <Map_ Location="location" />
                                 </div>
                                 <div class="uk-card-body">
                                     <div class="uk-text-small">
@@ -61,16 +61,7 @@
         </div>
     </div>
 </div>
+@code{
 
-@code {
-    [Inject]
-    public IJSRuntime JSRuntime { get; set; }
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            await JSRuntime.InvokeVoidAsync("initMap");
-        }
-    }
+    private Location location = new Location() { Lat = 59.9356728, Long = 30.3258604 };
 }
